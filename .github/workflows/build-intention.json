@@ -1,0 +1,31 @@
+{
+  "event": {
+    "provider": "github-action-build",
+    "reason": "Job triggered",
+    "url": "JOB_URL"
+  },
+  "actions": [
+    {
+      "action": "package-build",
+      "id": "build",
+      "provision": [],
+      "service": {
+        "project": "composer",
+        "name": "composer-test",
+        "environment": "tools"
+      },
+      "package": {
+        "architecture": "jvm",
+        "version": "",
+        "buildVersion": "",
+        "buildNumber": 0,
+        "name": "composer-test",
+        "type": "war",
+        "license": "Apache-2.0"
+      }
+    }
+  ],
+  "user": {
+    "name": "github@internal"
+  }
+}

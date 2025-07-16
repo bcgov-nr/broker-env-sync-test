@@ -1,0 +1,18 @@
+spec:
+  system: composer
+metadata:
+  name: composer-test
+  annotations:
+    license: Apache-2.0
+    playbook.io.nrs.gov.bc.ca/clientId: ""
+    playbook.io.nrs.gov.bc.ca/pomRoot: ./
+    playbook.io.nrs.gov.bc.ca/unitTestsPath: ""
+    playbook.io.nrs.gov.bc.ca/gitHubPackages: true
+    playbook.io.nrs.gov.bc.ca/gitHubOwnerPack: bcgov-nr/broker-env-sync-test
+    playbook.io.nrs.gov.bc.ca/deployOnPrem: true
+    playbook.io.nrs.gov.bc.ca/deployJasperReports: false
+    playbook.io.nrs.gov.bc.ca/playbookPath: playbooks
+    playbook.io.nrs.gov.bc.ca/tomcatContext: test#composer
+    playbook.io.nrs.gov.bc.ca/useAltAppDirName: false
+    playbook.io.nrs.gov.bc.ca/addWebadeConfig: false
+    composer.io.nrs.gov.bc.ca/generators: gh-maven-build
