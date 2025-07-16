@@ -1,0 +1,26 @@
+spec:
+  system: composer
+  type: website
+  lifecycle: production
+  owner: Oscar
+metadata:
+  name: composer-test
+  annotations:
+    license: Apache-2.0
+    playbook.io.nrs.gov.bc.ca/clientId: ""
+    playbook.io.nrs.gov.bc.ca/pomRoot: ./
+    playbook.io.nrs.gov.bc.ca/unitTestsPath: ""
+    playbook.io.nrs.gov.bc.ca/gitHubPackages: true
+    playbook.io.nrs.gov.bc.ca/gitHubOwnerPack: bcgov-nr/broker-env-sync-test
+    playbook.io.nrs.gov.bc.ca/deployOnPrem: true
+    playbook.io.nrs.gov.bc.ca/deployJasperReports: false
+    playbook.io.nrs.gov.bc.ca/playbookPath: playbooks
+    playbook.io.nrs.gov.bc.ca/tomcatContext: test#composer
+    playbook.io.nrs.gov.bc.ca/useAltAppDirName: false
+    playbook.io.nrs.gov.bc.ca/addWebadeConfig: false
+    composer.io.nrs.gov.bc.ca/generators: gh-maven-build,backstage
+    github.com/project-slug: bcgov-nr/broker-env-sync-test
+  description: eg. Vivaldi
+  title: Le quattro stagioni
+apiVersion: backstage.io/v1alpha1
+kind: Component
