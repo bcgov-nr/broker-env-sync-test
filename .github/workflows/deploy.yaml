@@ -22,21 +22,15 @@ env:
   PACKAGE_REPO: https://maven.pkg.github.com/bcgov-nr/broker-env-sync-test
 
 jobs:
-  check-token-expiration:
-    name: Check token expiration
-    uses: ./.github/workflows/check-token.yaml
-    permissions: {}
-    secrets:
-      token: ${{ secrets.BROKER_JWT }}
   deploy-pre-release-build:
     name: "Trigger ${{ inputs.environment }} deploy"
     if: ${{ ! startsWith(github.ref, 'refs/tags/') }}
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
-    needs: check-token-expiration
     permissions:
       contents: read
       packages: read
+      pull-requests: read
     outputs:
       project_version: ${{ steps.set-build-output.outputs.project_version }}
       build_guid: ${{ steps.set-build-output.outputs.build_guid }}
@@ -178,7 +172,6 @@ jobs:
     if: ${{ startsWith(github.ref, 'refs/tags/') }}
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
-    needs: check-token-expiration
     permissions:
       contents: read
       packages: read
@@ -343,6 +336,7 @@ jobs:
           fi
           curl \
           --data-urlencode "token=${{ secrets.JENKINS_TOKEN }}" \
+          --data-urlencode "githubRunId=${{ github.run_id }}" \
           --data-urlencode "githubToken=${{ secrets.GITHUB_TOKEN }}" \
           --data-urlencode "brokerJwt=${{ secrets.BROKER_JWT }}" \
           --data-urlencode "artifactSha256=${ARTIFACT_SHA256}" \
@@ -377,3 +371,7 @@ jobs:
           BROKER_JWT: ${{ secrets.BROKER_JWT }}
           SERVICE_PROJECT: ${{ env.SERVICE_PROJECT }}
           SERVICE_NAME: ${{ env.SERVICE_NAME }}
+          ACTION_NAME: "package-installation"
+          PROVIDER_NAME: "polaris-deploy"
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          ENVIRONMENT: ${{ inputs.environment }}
