@@ -18,9 +18,14 @@ metadata:
     playbook.io.nrs.gov.bc.ca/tomcatContext: test#composer
     playbook.io.nrs.gov.bc.ca/useAltAppDirName: false
     playbook.io.nrs.gov.bc.ca/addWebadeConfig: false
-    composer.io.nrs.gov.bc.ca/generators: gh-maven-build,backstage
+    composer.io.nrs.gov.bc.ca/generators: gh-maven-build,backstage,nr-repository-composer
     github.com/project-slug: bcgov-nr/broker-env-sync-test
-  description: eg. Vivaldi
+    composer.io.nrs.gov.bc.ca/version: f265988
+    composer.io.nrs.gov.bc.ca/lastRun: 2026-10-21T17:30:36.934Z
+    playbook.io.nrs.gov.bc.ca/instances: '[{"env":"development","url":"https://example.com"}]'
+  description: Vivaldi gives musical expression to each season of the year
   title: Le quattro stagioni
+  tags:
+    - java
 apiVersion: backstage.io/v1alpha1
 kind: Component
