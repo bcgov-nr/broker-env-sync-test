@@ -27,5 +27,6 @@ metadata:
   title: Le quattro stagioni
   tags:
     - java
+    - music
 apiVersion: backstage.io/v1alpha1
 kind: Component
